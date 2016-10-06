@@ -1,0 +1,18 @@
+<div class="profile-userpic">
+	<div class="abc">
+		<%= link_to gravatar_for(current_user, size: 100), current_user %>
+	</div>
+					
+</div>
+
+
+<div class="profile-usertitle">
+	<div class="profile-usertitle-name">
+		<%= current_user.name %>
+	</div>
+</div>
+
+<div class="profile-userbuttons">
+	<%= link_to "view profile", current_user, class:"btn btn-success btn-sm" %>
+	<%= link_to "Log out", logout_path, method: "delete", class:"btn btn-danger btn-sm" %>	
+</div>
