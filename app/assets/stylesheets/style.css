@@ -240,6 +240,10 @@ footer {
     padding-left: 35%;
 }
 
+.red{
+    color:red;
+    }
+
 .statuses {
   list-style: none;
   padding: 0;
@@ -425,3 +429,5 @@ text-decoration-color: white;
   padding-right: 20px;
   padding-top: 5px;
 }
+
+.background1 { background:url(<%= image_tag "images/backgound.jpg" %>) }

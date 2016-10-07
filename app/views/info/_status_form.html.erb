@@ -6,7 +6,8 @@
     		<div class="widget-area no-padding blank">
 				<div class="status-upload">
 					<%= form_for(@status) do |f| %>
-						<%= f.text_area :content, placeholder: "What are you doing right now?" %>						
+						<%= f.text_area :content, placeholder: "What are you doing right now?",id: "message" %>	
+								
 						<ul>
 							<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Audio"><i class="fa fa-music"></i></a></li>
 							<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Video"><i class="fa fa-video-camera"></i></a></li>
@@ -14,8 +15,9 @@
 							<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>
 						</ul>
 						<div class="post">
-						<%= f.submit "Post", class: "btn btn-success green" %>
-						</div>						
+						<%= f.submit "Post", class: "btn btn-success green" ,id: "btnSubmit" %>
+						</div>
+								
 					<% end %>	
 					</div><!-- Status Upload  -->
 
@@ -24,3 +26,4 @@
 	</div>
         
  </div>
+
