@@ -1,9 +1,8 @@
-<% if logged_in? %>
+<<% if logged_in? %>
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container"> 
-        <div class="navbar-header">  
-                 
-             <%= link_to "Home", root_path,class: "navbar-brand" %>
+        <div class="navbar-header">            
+            <a class="navbar-brand">My sApp.</a>
         </div>
         <div class="nav navbar-nav navbar-right">
         	<div class="navbar-header">        	
@@ -20,8 +19,13 @@
 <div class="row profile">
 	<div class="col-md-3">
 		<div class="profile-sidebar">
-				<!-- SIDEBAR USERPIC -->   					
-        			<%= render 'info/user_info' %>			
+			<!-- SIDEBAR USERPIC -->
+			
+				
+   					
+        			<%= render 'info/user_info' %>
+      				
+      		
       	</div>
      </div>
 				
@@ -35,8 +39,15 @@
 </div>
 
 <% else %>
-  <div class="center jumbotron">
-    <h1>Welcome to the Sample App</h1> 
+  <div id="hello" class="center jumbotron">
+    <h1>Welcome to the DDApp</h1>
+
+    
+    <br>
+    <br><br><br><br><br><br><br><br><br>
     <%= link_to "Login now!", new_session_path, class: "btn btn-lg btn-primary" %>
-  </div>  
+  </div>
+
+  
+
 <% end %>
