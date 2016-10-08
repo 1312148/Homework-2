@@ -425,3 +425,18 @@ text-decoration-color: white;
   padding-right: 20px;
   padding-top: 5px;
 }
+
+#hello{
+  background-image: url(header.jpg);
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  color: white;
+  border-radius: 0;
+}

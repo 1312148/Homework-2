@@ -22,6 +22,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+gem 'nokogiri', '~> 1.6', '>= 1.6.8.1'
 
 gem 'bootstrap3-rails', '~> 3.2'
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
