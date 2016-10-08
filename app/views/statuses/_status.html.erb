@@ -1,8 +1,21 @@
 <li id="status-<%= status.id %>">
-  <%= link_to gravatar_for(status.user, size: 50), status.user %>
-  <span class="user"><%= link_to status.user.name, status.user %></span>
-  <span class="content"><%= status.content %></span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(status.created_at) %> ago.
-  </span>
-</li>
+  
+
+<div class="well">
+      <div class="media">
+      	<a class="pull-left">
+    		<%= link_to gravatar_for(status.user, size: 50), status.user %>
+    		<%= link_to status.user.name, status.user %>
+  		</a>
+  		<div class="media-body">
+    			          
+         	<%= status.content %>
+          <ul class="list-inline list-unstyled">
+  			<li><i class="material-icons">create</i></i>Posted <%= time_ago_in_words(status.created_at) %> ago.</span></li>
+            <li>|</li>
+            <span><i class="material-icons">chat_bubble_outline</i> (0) comments</span>
+           
+       </div>
+    </div>
+  </div>
+  </li>
