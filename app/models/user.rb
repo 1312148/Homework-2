@@ -1,7 +1,8 @@
 class User < ApplicationRecord
 	before_save { email.downcase! }
 	has_many :statuses ,dependent: :destroy
-   has_many :active_relationships,  class_name:  "Relationship",
+   has_many :comments, dependent: :destroy
+  has_many :active_relationships,  class_name:  "Relationship",
                                    foreign_key: "follower_id",
                                    dependent:   :destroy
   has_many :passive_relationships, class_name:  "Relationship",
@@ -27,9 +28,16 @@ class User < ApplicationRecord
   # See "Following users" for the full implementation.
   # Returns a user's status feed.
   def feed
-     following_ids = "SELECT followed_id FROM relationships
-                     WHERE  follower_id = :user_id"
+    following_ids = "SELECT followed_id FROM relationships
+                    WHERE  follower_id = :user_id"
     Status.where("user_id IN (#{following_ids})
+                     OR user_id = :user_id", user_id: id)
+  end
+
+  def feed_comment
+    following_ids = "SELECT followed_id FROM relationships
+                    WHERE  follower_id = :user_id"
+    Comment.where("user_id IN (#{following_ids})
                      OR user_id = :user_id", user_id: id)
   end
 

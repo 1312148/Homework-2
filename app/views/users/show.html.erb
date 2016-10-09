@@ -1,7 +1,7 @@
    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container"> 
         <div class="navbar-header">            
-            <a class="navbar-brand">My sApp.</a>
+ 			<%= link_to "Home", root_path , class: "navbar-brand" %>
         </div>
         <div class="nav navbar-nav navbar-right">
         	<div class="navbar-header">        	
@@ -79,23 +79,24 @@
 								<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Sound Record"><i class="fa fa-microphone"></i></a></li>
 								<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>
 							</ul>
-							<button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Share</button>
+							<button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Post</button>
 						</form>
 					</div><!-- Status Upload  -->
 				</div><!-- Widget Area -->
 			</div>
         
     	</div>			
-            <div class="profile-content1">            
-			   <div class="col-md-9">								
-
-			   <% if @user.statuses.any? %>
+            <div class="profile-content"> 
+            	<div class= "container">          
+			   <div class="col-sm-9">
+			   	<% if @user.statuses.any? %>
 			       <h3>Status (<%= @user.statuses.count %>)</h3>
 			      <ol class="statuses">
 			        <%= render @statuses %>
 			      </ol>
 			      <%= will_paginate @statuses %>
 			    <% end %>
+			  </div>
 			  </div>
             </div>
 		</div>

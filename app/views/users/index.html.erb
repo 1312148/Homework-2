@@ -1,4 +1,19 @@
-
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container"> 
+        <div class="navbar-header">            
+ 			<%= link_to "Home", root_path , class: "navbar-brand" %>
+        </div>
+        <div class="nav navbar-nav navbar-right">
+        	<div class="navbar-header">        	
+        	<div class="profile-userpichome">
+				<div class="right">
+					<%= link_to gravatar_for(current_user, size: 50), current_user %><strong><%= current_user.name %></strong>
+				</div>	
+			</div>			
+        </div>          
+    </div>
+	</div>
+</div>
 
 <div class="col-md-3">
 <div class="profile-userpic">
@@ -8,8 +23,9 @@
   <% @users.each do |user| %>
     
       <%= gravatar_for user %>
-      <%= link_to user.name, user %>
-    
+      <strong><%= link_to user.name, user %></strong>
+      
+     
   <% end %>
  <%= will_paginate %>
 </ul>

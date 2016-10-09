@@ -1,7 +1,7 @@
-class Status < ApplicationRecord
+class Comment < ApplicationRecord
   belongs_to :user
-   has_many :comments, dependent: :destroy
-  validates :user_id, presence: true
+  belongs_to :status
   default_scope -> { order(created_at: :desc) }
+  validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }
 end

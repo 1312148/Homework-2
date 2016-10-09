@@ -1,0 +1,81 @@
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container"> 
+        <div class="navbar-header">            
+            <%= link_to "Home", root_path , class: "navbar-brand" %>
+        </div>
+        <div class="nav navbar-nav navbar-right">
+            <div class="navbar-header">         
+            <div class="profile-userpichome">
+                <div class="right">
+                    <%= link_to gravatar_for(current_user, size: 50), current_user %><strong><%= current_user.name %></strong>
+                </div>  
+            </div>          
+        </div>          
+    </div>
+    </div>
+</div>
+
+<div class="row profile">
+    <div class="col-md-3">
+        <div class="profile-sidebar">
+            <!-- SIDEBAR USERPIC -->
+                
+                    
+                    <%= render 'info/user_info' %>                  
+                  
+        </div>
+     </div>
+
+        <div class="profile-content"> 
+        <div class="container"> 
+        <div class="col-sm-8">
+        <div class="panel panel-white post panel-shadow">
+            <div class="post-heading">
+                <div class="pull-left image">
+                    <div class="profile-userpic3">
+                    <%= link_to gravatar_for(@status.user, size: 50), @status.user, class: "pull-left image" %>
+                    </div>
+                </div>
+                <div class="pull-left meta">
+                  
+                    <h4 class="user"> <%= link_to @status.user.name, @status.user %></h4>
+                    
+                    <h6 class="text-muted time">Posted <%= time_ago_in_words(@status.created_at) %> ago.</h6>
+                </div>
+            </div> 
+            <div class="post-description"> 
+                <%= @status.content %>
+                <div class="stats">
+                  
+                    <a href="#" class="btn btn-default stat-item">
+                        <i class="fa fa-thumbs-up icon"></i>2
+                    </a>
+                    <a href="#" class="btn btn-default stat-item">
+                        <i class="fa fa-share icon"></i>12
+                    </a>
+                </div>
+            </div>
+             <div class="post-footer">
+                <div class="input-group">
+                    <%= form_for([@status, @status.comments.build]) do |f| %>                 
+                    
+                    <div class="input-group">
+                        <%= f.text_area :content, placeholder: "add a comment", class: "form-control"%>  
+                        <%= f.submit "Post", class: "btn btn-success green" %>
+                            
+                    </div>             
+                </div>
+                <% end %> 
+                <ul class="comments-list">
+                   <%= render 'info/feed_comment' %>
+ 
+
+                </ul>               
+               
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+

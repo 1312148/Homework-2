@@ -1,0 +1,19 @@
+<li id="comment-<%= comment.id %>">
+<div class="comments-list">
+    <div class="comment">
+      	<div class="profile-userpic4">
+       
+            <%= link_to gravatar_for(comment.user, size: 50), comment.user %>
+                 <strong><%= link_to comment.user.name, comment.user %></strong>
+        </div>                        
+         	<div class="comment-body">
+             	<div class="comment-heading">                     
+					<h5 class="time">Posted <%= time_ago_in_words(comment.created_at) %> ago.</h5>
+         		</div>
+               <%= comment.content %>
+			</div>
+            <%end%>                        
+    </div>
+</div> 
+</li>
+

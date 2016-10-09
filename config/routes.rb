@@ -14,7 +14,10 @@ end
 
 
 resources :sessions
-resources :statuses,          only: [:create, :destroy]
+resources :statuses do
+	resources :comments,          only: [:create, :destroy]
+ end
+
 resources :relationships,       only: [:create, :destroy]
- 
+
 end

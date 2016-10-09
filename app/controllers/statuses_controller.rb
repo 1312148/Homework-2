@@ -1,7 +1,13 @@
 class StatusesController < ApplicationController
 	def new
 	end
-
+	def show
+		@status = Status.find(params[:id])
+		if logged_in?
+  		@comment  = current_user.comments.build
+      	@feed_items_comment = current_user.feed_comment.paginate(page: params[:page])
+      	end
+	end
 	def create
 	    @status = current_user.statuses.build(status_params)
 	    if @status.save
@@ -15,6 +21,8 @@ class StatusesController < ApplicationController
 
 	def destroy
   	end
+
+  	
 
   	private
     def status_params
