@@ -23,7 +23,7 @@ Cần thể hiện đầy đủ thông tin của trạng thái như hình ảnh,
 (Sử dụng [Twitter Gem](https://github.com/sferik/twitter) và [đăng ký Application Token](https://apps.twitter.com))
 * [x] Cần thể hiện số ký tự còn lại khi gõ (Twitter cho phép gõ trạng thái tối đa 140 ký tự)
 * [x] Cần thực hiện AJAX và javascript để hạn chế nạp lại trang.
-* [] Cho phép tải danh sách các tweet vào trang chủ của người dùng
+* [ ] Cho phép tải danh sách các tweet vào trang chủ của người dùng
 * [ ] Cần quản lý API Key bằng biến môi trường (Sử dụng [dotenv gem](https://github.com/bkeepers/dotenv))
 
 Danh sách chức năng **phụ**:
@@ -42,8 +42,8 @@ Danh sách chức năng **thêm** đã làm nhưng chưa được liệt kê ở
 
 
 Quy trình sử dụng [GIT Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/)
-* [ ] Git với Centralize Workflow (chỉ có duy nhất nhánh master)
-* [ ] Git theo Feature Branch Workflow (mỗi chức năng sẽ được làm trên 1 nhánh riêng)
+* [x] Git với Centralize Workflow (chỉ có duy nhất nhánh master)
+* [x] Git theo Feature Branch Workflow (mỗi chức năng sẽ được làm trên 1 nhánh riêng)
 * [ ] Git theo Gitflow Workflow (Có các nhánh develop, master, test,...)
 * [ ] Có sử dụng tag, pull requests
 
